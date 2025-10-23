@@ -52,7 +52,6 @@ Su objetivo es ofrecer una experiencia moderna y minimalista para organizar tus 
 
 ---
 
-
 ## 📱 Capturas de pantalla
 
 
