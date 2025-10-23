@@ -52,15 +52,9 @@ Su objetivo es ofrecer una experiencia moderna y minimalista para organizar tus 
 
 ---
 
-## 🏗️ Estructura del proyecto
-
-<details>
-<summary>📂 Ver estructura</summary>
-</details>
 
 ## 📱 Capturas de pantalla
 
-> *(Espacio reservado para incluir capturas más adelante)*
 
 | Pantalla principal | Listado de libros | Nuevo libro |
 |--------------------|-------------------|-------------------|
