@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Book tracker</string>
+
+    <string name="screen_title_home">Home</string>
+    <string name="screen_title_list">My Books</string>
+    <string name="screen_title_detail">Detail</string>
+    <string name="screen_title_add">Add</string>
+    <string name="screen_title_edit">Edit</string>
+
+
+    <string name="btn_save">Save</string>
+    <string name="btn_edit">Edit</string>
+    <string name="btn_accept">Accept</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_back">Back</string>
+    <string name="btn_delete">Delete</string>
+    <string name="btn_addbook">Add book</string>
+
+    <string name="txt_card_statics">Statistics</string>
+
+    <string name="txt_card_bookreading">You are not currently reading any books</string>
+    <string name="txt_card_following">Are you really not interested in any books?</string>
+    <string name="txt_card_lastbookread">Have you not read any books yet?</string>
+    <string name="txt_card_listempty">You currently have no books in the system</string>
+
+
+    <string name="txt_book_title">Title</string>
+    <string name="txt_book_author">Author</string>
+    <string name="txt_book_imageurl">URL cover</string>
+    <string name="txt_book_notes">Notes</string>
+    <string name="txt_book_datestart">Date start</string>
+    <string name="txt_book_dateend">Date end</string>
+    <string name="txt_book_dropdown">Choose an option</string>
+    <string name="txt_book_status_reading">Reading</string>
+    <string name="txt_book_status_finished">Read</string>
+    <string name="txt_book_status_following">Following</string>
+
+    <string name="txt_book">Book</string>
+    <string name="txt_books">Books</string>
+    <string name="txt_booksFinished">Finished</string>
+
+    <string name="txt_title_empty_library">Start your library!</string>
+    <string name="txt_empty_library">You don\'t have any books registered yet.
+Add your first book using the + button.</string>
+
+</resources>

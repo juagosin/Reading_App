@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">Seguimiento de libross</string>
+
+    <string name="screen_title_home">Home</string>
+    <string name="screen_title_list">Mis libros</string>
+    <string name="screen_title_detail">Detalle</string>
+    <string name="screen_title_add">Añadir</string>
+    <string name="screen_title_edit">Editar</string>
+
+
+    <string name="btn_save">Guardar</string>
+    <string name="btn_edit">Editar</string>
+    <string name="btn_accept">Aceptar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_back">Atras</string>
+    <string name="btn_delete">Eliminar</string>
+    <string name="btn_addbook">Añadir libro</string>
+
+
+    <string name="txt_card_statics">Estadísticas</string>
+
+    <string name="txt_card_bookreading">Actualmente no estás leyendo ningún libro</string>
+    <string name="txt_card_following">¿De verdad que no te interesa ningún libro?</string>
+    <string name="txt_card_lastbookread">¿Aún no te leíste ningún libro?</string>
+    <string name="txt_card_listempty">Actualmente no tienes ningún libro en el sistema</string>
+
+
+    <string name="txt_book_title">Título</string>
+    <string name="txt_book_author">Autor</string>
+    <string name="txt_book_imageurl">URL portada</string>
+    <string name="txt_book_notes">Notas</string>
+    <string name="txt_book_datestart">Fecha de inicio</string>
+    <string name="txt_book_dateend">Fecha de fin</string>
+    <string name="txt_book_dropdown">Selecciona una opción</string>
+    <string name="txt_book_status_reading">Leyendo</string>
+    <string name="txt_book_status_finished">Leído</string>
+    <string name="txt_book_status_following">Pendiente</string>
+
+    <string name="txt_book">Libro</string>
+    <string name="txt_books">Libros</string>
+    <string name="txt_booksFinished">Leídos</string>
+
+    <string name="txt_title_empty_library">¡Empieza tu biblioteca!</string>
+    <string name="txt_empty_library">Aún no tienes libros registrados.
+Añade tu primer libro con el botón +</string>
+
+
+
+</resources>
