@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.juagosin.estudio"
+    namespace = "com.juagosin.readingAPP"
     compileSdk = 36
 
     defaultConfig {

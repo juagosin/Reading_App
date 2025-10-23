@@ -19,6 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "estudio"
+rootProject.name = "readingAPP"
 include(":app")
  
