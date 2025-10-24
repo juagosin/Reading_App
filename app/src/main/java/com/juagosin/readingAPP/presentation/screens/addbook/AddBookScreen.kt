@@ -116,7 +116,11 @@ fun AddBookScreen(
             label = stringResource(R.string.txt_book_dateend),
             modifier = Modifier.fillMaxWidth()
         )
-        DropdownExample()
+        BookStatusDropdown(
+            selectedStatus = state.status,
+            onStatusChange = { viewModel.onEvent(AddBookEvent.OnStatusChange(it)) },
+            modifier = Modifier.fillMaxWidth()
+        )
         Button(
             modifier = Modifier
                 .fillMaxWidth()
@@ -137,36 +141,28 @@ fun AddBookScreen(
 
     }
 }
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DropdownExample(viewModel: AddBookViewModel = hiltViewModel()) {
-
+fun BookStatusDropdown(
+    selectedStatus: BookStatus,
+    onStatusChange: (BookStatus) -> Unit,
+    modifier: Modifier = Modifier
+) {
     var expanded by remember { mutableStateOf(false) }
-
     val options = BookStatus.entries
-
-
-    var selectedOption by remember { mutableStateOf(options[0]) }
-
 
     ExposedDropdownMenuBox(
         expanded = expanded,
-        onExpandedChange = { expanded = !expanded }
+        onExpandedChange = { expanded = !expanded },
+        modifier = modifier
     ) {
-
         OutlinedTextField(
-            value = stringResource(selectedOption.descriptionRes) ,
-
-            onValueChange = {
-                viewModel.onEvent(AddBookEvent.OnStatusChange(selectedOption.code))
-
-
-            },
+            value = stringResource(selectedStatus.descriptionRes),
+            onValueChange = { }, // No hacer nada, es read-only
             readOnly = true,
             label = {
-                Text(text = stringResource(R.string.txt_book_dropdown) )
-                    },
+                Text(text = stringResource(R.string.txt_book_dropdown))
+            },
             trailingIcon = {
                 ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
             },
@@ -175,19 +171,16 @@ fun DropdownExample(viewModel: AddBookViewModel = hiltViewModel()) {
                 .fillMaxWidth()
         )
 
-        // Menú desplegable
         ExposedDropdownMenu(
             expanded = expanded,
             onDismissRequest = { expanded = false }
         ) {
             options.forEach { option ->
                 DropdownMenuItem(
-                    text = { Text(stringResource(id =option.descriptionRes)) },
+                    text = { Text(stringResource(option.descriptionRes)) },
                     onClick = {
-                        selectedOption = option
+                        onStatusChange(option)
                         expanded = false
-                        viewModel.onEvent(AddBookEvent.OnStatusChange(selectedOption.code))
-
                     }
                 )
             }

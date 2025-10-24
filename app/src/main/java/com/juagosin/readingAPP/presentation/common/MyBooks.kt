@@ -25,9 +25,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.juagosin.readingAPP.R
-import com.juagosin.readingAPP.data.local.entity.Book
+import com.juagosin.readingAPP.domain.model.Book
+
 import com.juagosin.readingAPP.domain.model.BookStatus
-import com.juagosin.readingAPP.domain.model.getBookStatusByCode
 import kotlin.collections.forEach
 
 
@@ -78,10 +78,10 @@ fun BookListItem(book: Book, onItemClick: (Int) -> Unit) {
                 Text(book.author, color = Color.Gray)
 
                 Text(
-                    text = stringResource(getBookStatusByCode(book.status)!!.descriptionRes),
+                    text = stringResource(book.status.descriptionRes),
                     fontWeight = FontWeight.Medium,
                     color =
-                        when(getBookStatusByCode(book.status)!!) {
+                        when(book.status) {
                             BookStatus.READING -> colorScheme.primary
                             BookStatus.PENDING -> colorScheme.error
                             BookStatus.READ -> colorScheme.secondary

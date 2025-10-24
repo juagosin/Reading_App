@@ -1,6 +1,8 @@
 package com.juagosin.readingAPP.presentation.screens.edit
 
-import com.juagosin.readingAPP.data.local.entity.Book
+import com.juagosin.readingAPP.domain.model.Book
+import com.juagosin.readingAPP.domain.model.BookStatus
+
 
 data class EditState (
     val book: Book? =null,
@@ -12,7 +14,7 @@ data class EditState (
     val dateAd: Long = System.currentTimeMillis(),
     val startDate: Long? = null,
     val endDate: Long? = null,
-    val status: Int = 1,
+    val status: BookStatus = BookStatus.PENDING,
     val description: String = "",
     val isSuccess: Boolean = false,
     val isEditing: Boolean = false,
@@ -23,4 +25,4 @@ data class EditState (
     val titleError: String? = null,
     val authorError: String? = null,
 
-)
+    )

@@ -1,6 +1,7 @@
 package com.juagosin.readingAPP.presentation.screens.home
 
-import com.juagosin.readingAPP.data.local.entity.Book
+import com.juagosin.readingAPP.domain.model.Book
+
 
 data class HomeState(
     val isLoadingFollow: Boolean = false,
@@ -17,4 +18,4 @@ data class HomeState(
     val books: List<Book> = emptyList(),
     val percentBooksFinished: Float = 0f,
 
-)
+    )
