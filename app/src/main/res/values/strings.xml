@@ -6,6 +6,7 @@
     <string name="screen_title_detail">Detalle</string>
     <string name="screen_title_add">Añadir</string>
     <string name="screen_title_edit">Editar</string>
+    <string name="screen_title_search">Buscar</string>
 
 
     <string name="btn_save">Guardar</string>

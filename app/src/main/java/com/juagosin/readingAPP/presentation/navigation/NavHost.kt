@@ -12,6 +12,7 @@ import com.juagosin.readingAPP.presentation.screens.detail.DetailScreen
 import com.juagosin.readingAPP.presentation.screens.edit.EditScreen
 import com.juagosin.readingAPP.presentation.screens.home.HomeScreen
 import com.juagosin.readingAPP.presentation.screens.list.ListScreen
+import com.juagosin.readingAPP.presentation.screens.search.SearchScreen
 
 
 @Composable
@@ -60,6 +61,12 @@ fun MyNavHost(navController: NavHostController, modifier: Modifier) {
                 },
                 bookId = bookId
             )
+        }
+        composable(AppScreen.Search.route) {
+            SearchScreen(onItemClick = {
+
+                    //
+            })
         }
 
 

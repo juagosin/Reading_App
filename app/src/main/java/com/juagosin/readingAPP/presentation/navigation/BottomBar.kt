@@ -50,6 +50,22 @@ fun BottomBar(navController: NavHostController, modifier: Modifier = Modifier) {
                 Icon(imageVector = AppScreen.List.icon, contentDescription = "")
             }
         )
+        NavigationBarItem(
+            label = {
+                Text(text = stringResource(AppScreen.Search.titleRes))
+            },
+            selected = currentRoute == AppScreen.Search.route,
+            onClick = {
+                navController.navigate(AppScreen.Search.route) {
+                    popUpTo(AppScreen.Search.route) {
+                        inclusive = true
+                    }
+                }
+            },
+            icon = {
+                Icon(imageVector = AppScreen.Search.icon, contentDescription = "")
+            }
+        )
 
 
 
