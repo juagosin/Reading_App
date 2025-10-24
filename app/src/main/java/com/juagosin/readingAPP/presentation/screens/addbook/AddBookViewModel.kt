@@ -6,7 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.juagosin.readingAPP.data.local.entity.Book
+import com.juagosin.readingAPP.domain.model.Book
 import com.juagosin.readingAPP.domain.use_case.BooksUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -78,14 +78,15 @@ private fun validateFields() {
             viewModelScope.launch {
                 booksUseCase.addBookUseCase(
                     Book(
+                        id = null,
                         title = state.title,
                         author = state.author,
                         imageUrl = state.imageUrl,
                         description = state.description,
                         status = state.status,
-                        dateAd = System.currentTimeMillis(),
-                        dateStart = state.startDate,
-                        dateEnd = state.endDate
+                        dateAdded = System.currentTimeMillis(),
+                        dateStarted = state.startDate,
+                        dateFinished = state.endDate
                     )
                 )
             }

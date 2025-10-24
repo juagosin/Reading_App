@@ -28,6 +28,7 @@ import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import com.juagosin.readingAPP.R
 import com.juagosin.readingAPP.domain.model.BookStatus
 import com.juagosin.readingAPP.presentation.common.DatePickerTextField
+import com.juagosin.readingAPP.presentation.screens.addbook.BookStatusDropdown
 
 
 @Composable
@@ -122,7 +123,11 @@ fun EditScreen(
             label = stringResource(R.string.txt_book_dateend),
             modifier = Modifier.fillMaxWidth()
         )
-        EditDropdown()
+        BookStatusDropdown(
+            selectedStatus = state.status,
+            onStatusChange = { viewModel.onEvent(EditEvent.OnStatusChange(it)) },
+            modifier = Modifier.fillMaxWidth()
+        )
         Button(
             modifier = Modifier
                 .fillMaxWidth()
@@ -143,57 +148,3 @@ fun EditScreen(
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Composable
-fun EditDropdown(viewModel: EditViewModel = hiltViewModel()) {
-
-    var expanded by remember { mutableStateOf(false) }
-
-    val options = BookStatus.entries
-
-
-    var selectedOption = options.find { it.code == viewModel.state.status } ?: options.first()
-
-
-    ExposedDropdownMenuBox(
-        expanded = expanded,
-        onExpandedChange = { expanded = !expanded }
-    ) {
-
-        OutlinedTextField(
-            value = stringResource( selectedOption.descriptionRes),
-
-            onValueChange = {
-                viewModel.onEvent(EditEvent.OnStatusChange(selectedOption.code))
-
-
-            },
-            readOnly = true,
-            label = { Text(stringResource(R.string.txt_book_dropdown)) },
-            trailingIcon = {
-                ExposedDropdownMenuDefaults.TrailingIcon(expanded = expanded)
-            },
-            modifier = Modifier
-                .menuAnchor()
-                .fillMaxWidth()
-        )
-
-        // Menú desplegable
-        ExposedDropdownMenu(
-            expanded = expanded,
-            onDismissRequest = { expanded = false }
-        ) {
-            options.forEach { option ->
-                DropdownMenuItem(
-                    text = { Text(stringResource(id =option.descriptionRes)) },
-                    onClick = {
-                        selectedOption = option
-                        expanded = false
-                        viewModel.onEvent(EditEvent.OnStatusChange(selectedOption.code))
-
-                    }
-                )
-            }
-        }
-    }
-}

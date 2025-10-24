@@ -1,6 +1,7 @@
 package com.juagosin.readingAPP.presentation.screens.detail
 
-import com.juagosin.readingAPP.data.local.entity.Book
+import com.juagosin.readingAPP.domain.model.Book
+
 
 data class DetailState(
     val isLoading: Boolean = false,

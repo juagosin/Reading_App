@@ -6,7 +6,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.juagosin.readingAPP.data.local.entity.Book
+import com.juagosin.readingAPP.domain.model.Book
 import com.juagosin.readingAPP.domain.use_case.BooksUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -69,10 +69,10 @@ class EditViewModel @Inject constructor(
                     author = book?.author ?: "",
                     description = book?.description ?: "",
                     imageUrl = book?.imageUrl ?: "",
-                    endDate = book?.dateEnd,
-                    startDate = book?.dateStart,
-                    dateAd = book?.dateAd!!,
-                    status = book?.status ?: 1,
+                    endDate = book?.dateFinished,
+                    startDate = book?.dateStarted,
+                    dateAd = book?.dateAdded!!,
+                    status = book.status,
                     isLoading = false
                 )
                 state = state.copy(isLoading = false)
@@ -111,9 +111,9 @@ class EditViewModel @Inject constructor(
                         imageUrl = state.imageUrl,
                         description = state.description,
                         status = state.status,
-                        dateStart = state.startDate,
-                        dateEnd = state.endDate,
-                        dateAd = state.dateAd
+                        dateStarted = state.startDate,
+                        dateFinished = state.endDate,
+                        dateAdded = state.dateAd
                     )
                 )
             }

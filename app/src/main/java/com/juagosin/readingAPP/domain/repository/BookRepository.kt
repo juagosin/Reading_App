@@ -1,6 +1,6 @@
 package com.juagosin.readingAPP.domain.repository
 
-import com.juagosin.readingAPP.data.local.entity.Book
+import com.juagosin.readingAPP.domain.model.Book
 import kotlinx.coroutines.flow.Flow
 
 interface BookRepository {

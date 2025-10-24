@@ -3,9 +3,9 @@ package com.juagosin.readingAPP.data.local.entity
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
-data class Book(
-val title: String,
+@Entity(tableName = "book")
+data class BookEntity(
+    val title: String,
     val author: String,
     val imageUrl: String,
     val description: String,

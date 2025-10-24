@@ -1,6 +1,7 @@
 package com.juagosin.readingAPP.domain.use_case
 
-import com.juagosin.readingAPP.data.local.entity.Book
+
+import com.juagosin.readingAPP.domain.model.Book
 import com.juagosin.readingAPP.domain.repository.BookRepository
 
 class GetBookReadingUseCase(private val repository: BookRepository) {

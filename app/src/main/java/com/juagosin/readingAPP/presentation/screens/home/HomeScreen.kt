@@ -122,7 +122,7 @@ private fun BookListContent(
             .verticalScroll(rememberScrollState())
     ) {
         state.bookReading?.let { bookReading ->
-            val dateRange = bookReading.dateStart?.let {
+            val dateRange = bookReading.dateStarted?.let {
                 formatDate(it)
             } ?: ""
 

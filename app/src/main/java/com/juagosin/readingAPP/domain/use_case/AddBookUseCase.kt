@@ -1,7 +1,8 @@
 package com.juagosin.readingAPP.domain.use_case
 
-import com.juagosin.readingAPP.data.local.entity.Book
+import com.juagosin.readingAPP.data.local.entity.BookEntity
 import com.juagosin.readingAPP.data.local.entity.InvalidBookException
+import com.juagosin.readingAPP.domain.model.Book
 import com.juagosin.readingAPP.domain.repository.BookRepository
 
 class AddBookUseCase (

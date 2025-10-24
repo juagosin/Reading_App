@@ -1,11 +1,13 @@
 package com.juagosin.readingAPP.presentation.screens.addbook
 
+import com.juagosin.readingAPP.domain.model.BookStatus
+
 data class AddBookState(
     val title: String = "",
     val author: String = "",
     val imageUrl: String = "",
     val description: String = "",
-    val status: Int = 1,
+    val status: BookStatus = BookStatus.PENDING,
     val startDate: Long? = null,
     val endDate: Long? = null,
     val isSaving: Boolean = false,
@@ -17,4 +19,4 @@ data class AddBookState(
     val authorError: String? = null,
 
 
-)
+    )

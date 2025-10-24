@@ -91,17 +91,17 @@ fun DetailScreen(
 
 
         }
-        if (state.book?.dateStart != null) {
+        if (state.book?.dateStarted != null) {
             Text(
-                "Inicio de lectura: ${formatDate(state.book.dateStart)} ",
+                "Inicio de lectura: ${formatDate(state.book.dateStarted)} ",
                 modifier = Modifier.padding(horizontal = 24.dp),
                 color = colorScheme.primary,
                 fontSize = 10.sp,
             )
         }
-        if (state.book?.dateEnd != null) {
+        if (state.book?.dateFinished != null) {
             Text(
-                "Fin de lectura: ${formatDate(state.book.dateEnd)} ",
+                "Fin de lectura: ${formatDate(state.book.dateFinished)} ",
                 modifier = Modifier.padding(horizontal = 24.dp),
                 color = colorScheme.primary,
                 fontWeight = FontWeight.Medium,
