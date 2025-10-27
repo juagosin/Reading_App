@@ -16,6 +16,7 @@ import androidx.compose.material3.MaterialTheme.colorScheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -32,9 +33,22 @@ import com.juagosin.readingAPP.presentation.common.DatePickerTextField
 @Composable
 fun AddBookScreen(
     viewModel: AddBookViewModel = hiltViewModel(),
-    onBookSaved: () -> Unit
+    onBookSaved: () -> Unit,
+    prefilledTitle: String? = null,
+    prefilledAuthor: String? = null,
+    prefilledImageUrl: String? = null
 ) {
-
+    LaunchedEffect(prefilledTitle, prefilledAuthor, prefilledImageUrl) {
+        prefilledTitle?.let {
+            viewModel.onEvent(AddBookEvent.OnTitleChange(it))
+        }
+        prefilledAuthor?.let {
+            viewModel.onEvent(AddBookEvent.OnAuthorChange(it))
+        }
+        prefilledImageUrl?.let {
+            viewModel.onEvent(AddBookEvent.OnImageUrlChange(it))
+        }
+    }
     val state = viewModel.state
     if (state.isSuccess) {
         onBookSaved()

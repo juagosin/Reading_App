@@ -6,6 +6,7 @@ import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.BookmarkAdd
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FabPosition
 import androidx.compose.material3.FloatingActionButton
@@ -36,6 +37,28 @@ fun MyScaffold(modifier: Modifier) {
             val currentRoute = navBackStackEntry?.destination?.route
 
             val currentId = navBackStackEntry?.arguments?.getInt("id")
+            if(currentRoute?.startsWith("add") == true){
+                TopAppBar(
+                    title = { Text(stringResource(R.string.screen_title_add)) },
+                    actions = {
+                        IconButton(onClick = { navController.navigate("search") }) {
+                            Icon(Icons.Default.Search, contentDescription = "Buscar libro")
+                        }
+                    }
+                )
+            }
+            if(currentRoute?.startsWith("search") == true){
+                TopAppBar(
+                    title = { Text(stringResource(R.string.screen_title_search)) },
+                    navigationIcon = {
+                        IconButton(onClick = {
+                            navController.popBackStack()
+                        }) {
+                            Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = stringResource(R.string.btn_back))
+                        }
+                    },
+                )
+            }
             if (currentRoute?.startsWith("detail") == true) {
                 TopAppBar(
                     title = {
@@ -75,7 +98,7 @@ fun MyScaffold(modifier: Modifier) {
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    navController.navigate(AppScreen.AddBook.route)
+                    navController.navigate("addbook?title=null&author=null&imageUrl=null")
                 }
             ) {
                 Icon(Icons.Filled.BookmarkAdd, stringResource(R.string.btn_addbook))

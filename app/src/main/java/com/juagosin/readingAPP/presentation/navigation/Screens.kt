@@ -4,6 +4,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Bookmarks
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.ui.graphics.vector.ImageVector
 import com.juagosin.readingAPP.R
 import kotlinx.serialization.Serializable
@@ -50,7 +51,7 @@ sealed class AppScreen {
 
     @Serializable
     data object AddBook : AppScreen() {
-        override val route: String = "add"
+        override val route: String = "add?title=null&author=null&imageUrl=null"
         val title: String = R.string.screen_title_add.toString()
 
     }
@@ -60,6 +61,17 @@ sealed class AppScreen {
         override val titleRes: Int = R.string.screen_title_edit
         override val icon: ImageVector
             get() = Icons.Default.Person
+        override val showInBottomBar: Boolean = true
+    }
+
+    @Serializable
+    data object Search : AppScreen(), BottomBarScreen {
+        // Propiedad serializable de AppScreen
+        override val route: String = "search"
+
+        // Propiedades de la UI de la interfaz BottomBarScreen
+        override val titleRes: Int = R.string.screen_title_search
+        override val icon: ImageVector = Icons.Default.Search
         override val showInBottomBar: Boolean = true
     }
 

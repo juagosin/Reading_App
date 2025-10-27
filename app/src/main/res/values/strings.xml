@@ -6,6 +6,7 @@
     <string name="screen_title_detail">Detalle</string>
     <string name="screen_title_add">Añadir</string>
     <string name="screen_title_edit">Editar</string>
+    <string name="screen_title_search">Buscar</string>
 
 
     <string name="btn_save">Guardar</string>
@@ -37,6 +38,7 @@
     <string name="txt_book_status_following">Pendiente</string>
 
     <string name="txt_book">Libro</string>
+    <string name="txt_searchingbooks">Buscando libros...</string>
     <string name="txt_books">Libros</string>
     <string name="txt_booksFinished">Leídos</string>
 

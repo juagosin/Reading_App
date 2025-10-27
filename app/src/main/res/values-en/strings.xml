@@ -15,6 +15,7 @@
     <string name="btn_back">Back</string>
     <string name="btn_delete">Delete</string>
     <string name="btn_addbook">Add book</string>
+    <string name="screen_title_search">Search</string>
 
     <string name="txt_card_statics">Statistics</string>
 
@@ -36,6 +37,7 @@
     <string name="txt_book_status_following">Following</string>
 
     <string name="txt_book">Book</string>
+    <string name="txt_searchingbooks">Searching books...</string>
     <string name="txt_books">Books</string>
     <string name="txt_booksFinished">Finished</string>
 
