@@ -93,7 +93,7 @@ fun EmptyLibrary() {
                     fontWeight = FontWeight.Bold,
                     fontSize = 22.sp
                 ),
-                color = MaterialTheme.colorScheme.primary,
+                color = colorScheme.primary,
                 textAlign = TextAlign.Center
             )
 
@@ -103,7 +103,7 @@ fun EmptyLibrary() {
             Text(
                 text = stringResource(R.string.txt_empty_library),
                 style = MaterialTheme.typography.bodyMedium.copy(fontSize = 16.sp),
-                color = MaterialTheme.colorScheme.secondary.copy(alpha = 0.7f),
+                color = colorScheme.secondary.copy(alpha = 0.7f),
                 textAlign = TextAlign.Center
             )
         }
@@ -245,11 +245,14 @@ fun StatisticsSection(
 
 @Composable
 private fun LoadingScreen() {
-    Box(
+
+    Column(
         modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         CircularProgressIndicator()
+
     }
 }
 
@@ -267,7 +270,7 @@ private fun ErrorScreen(error: String) {
             Text(
                 text = "Error al cargar los libros",
                 style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.error,
+                color = colorScheme.error,
                 textAlign = TextAlign.Center
             )
             Spacer(modifier = Modifier.height(8.dp))

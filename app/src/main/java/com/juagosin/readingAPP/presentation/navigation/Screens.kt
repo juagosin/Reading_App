@@ -51,7 +51,7 @@ sealed class AppScreen {
 
     @Serializable
     data object AddBook : AppScreen() {
-        override val route: String = "add"
+        override val route: String = "add?title=null&author=null&imageUrl=null"
         val title: String = R.string.screen_title_add.toString()
 
     }

@@ -37,6 +37,7 @@
     <string name="txt_book_status_following">Following</string>
 
     <string name="txt_book">Book</string>
+    <string name="txt_searchingbooks">Searching books...</string>
     <string name="txt_books">Books</string>
     <string name="txt_booksFinished">Finished</string>
 

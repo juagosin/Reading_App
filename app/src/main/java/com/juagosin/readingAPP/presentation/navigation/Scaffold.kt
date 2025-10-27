@@ -98,7 +98,7 @@ fun MyScaffold(modifier: Modifier) {
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    navController.navigate(AppScreen.AddBook.route)
+                    navController.navigate("addbook?title=null&author=null&imageUrl=null")
                 }
             ) {
                 Icon(Icons.Filled.BookmarkAdd, stringResource(R.string.btn_addbook))

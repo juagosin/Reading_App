@@ -19,6 +19,7 @@ import com.juagosin.readingAPP.presentation.screens.search.SearchScreen
 fun MyNavHost(navController: NavHostController, modifier: Modifier) {
     val DETAIL_ROUTE = "detail/{id}"
     val EDIT_ROUTE = "edit/{id}"
+
     NavHost(navController, startDestination = AppScreen.Home.route, modifier = modifier) {
         composable(AppScreen.Home.route) {
             HomeScreen(onItemClick = {
@@ -43,11 +44,36 @@ fun MyNavHost(navController: NavHostController, modifier: Modifier) {
             val bookId = backStackEntry.arguments?.getInt("id") ?: 0
             DetailScreen(bookId = bookId)
         }
-        composable(AppScreen.AddBook.route) {
+        composable(
+            route = "addbook?title={title}&author={author}&imageUrl={imageUrl}",
+            arguments = listOf(
+                navArgument("title") {
+                    type = NavType.StringType
+                    nullable = true
+                    defaultValue = null
+                },
+                navArgument("author") {
+                    type = NavType.StringType
+                    nullable = true
+                    defaultValue = null
+                },
+                navArgument("imageUrl") {
+                    type = NavType.StringType
+                    nullable = true
+                    defaultValue = null
+                },
+            )
+        ) { backStackEntry ->
+            val title = backStackEntry.arguments?.getString("title")
+            val author = backStackEntry.arguments?.getString("author")
+            val imageUrl = backStackEntry.arguments?.getString("imageUrl")
             AddBookScreen(
                 onBookSaved = {
                     navController.navigate(AppScreen.List.route)
-                }
+                },
+                prefilledTitle = title,
+                prefilledAuthor = author,
+                prefilledImageUrl = imageUrl
             )
         }
         composable(
@@ -63,9 +89,9 @@ fun MyNavHost(navController: NavHostController, modifier: Modifier) {
             )
         }
         composable(AppScreen.Search.route) {
-            SearchScreen(onItemClick = {
+            SearchScreen(onItemClick = { title, author, imageUrl ->
+                navController.navigate("addbook?title=$title&author=$author&imageUrl=$imageUrl")
 
-                    //
             })
         }
 
