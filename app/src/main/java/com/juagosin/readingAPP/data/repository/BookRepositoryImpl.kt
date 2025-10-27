@@ -3,14 +3,18 @@ package com.juagosin.readingAPP.data.repository
 import com.juagosin.readingAPP.data.local.dao.BookDao
 import com.juagosin.readingAPP.data.local.mapper.toDomain
 import com.juagosin.readingAPP.data.local.mapper.toEntity
+import com.juagosin.readingAPP.data.remote.OpenLibraryApi
+import com.juagosin.readingAPP.data.remote.dto.toBookSearchResult
 import com.juagosin.readingAPP.domain.model.Book
+import com.juagosin.readingAPP.domain.model.BookSearchResult
 
 import com.juagosin.readingAPP.domain.repository.BookRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
 class BookRepositoryImpl(
-    private val bookDao: BookDao
+    private val bookDao: BookDao,
+    private val api: OpenLibraryApi
 ) : BookRepository {
     override fun getBooksOrderByDateAd(): Flow<List<Book>> {
         return bookDao.getBooksOrderByDateAd().map { it.toDomain() }
@@ -42,5 +46,14 @@ class BookRepositoryImpl(
 
     override suspend fun getPercentFinished(): Float {
         return bookDao.getPercentFinished()
+    }
+
+    override suspend fun searchBooksByTitle(title: String): Result<List<BookSearchResult>> {
+        return try {
+            val response = api.searchBooks(title, limit = 15)
+            Result.success(response.docs.map { it.toBookSearchResult() })
+        } catch (e: Exception) {
+            Result.failure(e)
+        }
     }
 }

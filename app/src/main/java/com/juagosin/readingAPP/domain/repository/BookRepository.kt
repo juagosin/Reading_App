@@ -1,6 +1,7 @@
 package com.juagosin.readingAPP.domain.repository
 
 import com.juagosin.readingAPP.domain.model.Book
+import com.juagosin.readingAPP.domain.model.BookSearchResult
 import kotlinx.coroutines.flow.Flow
 
 interface BookRepository {
@@ -13,4 +14,6 @@ interface BookRepository {
     suspend fun deleteBook(id: Int?)
     suspend fun insertBook(book: Book)
     suspend fun getPercentFinished():Float
+
+    suspend fun searchBooksByTitle(title: String): Result<List<BookSearchResult>>
 }

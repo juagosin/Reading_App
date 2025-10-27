@@ -8,5 +8,6 @@ data class BooksUseCase(
     val addBookUseCase: AddBookUseCase,
     val getBookUseCase: GetBookUseCase,
     val getLastBookReadUseCase: GetLastBookReadUseCase,
-    val getPercentFinished: GetPercentBooksFinished
+    val getPercentFinished: GetPercentBooksFinished,
+    val searchBooksUseCase: SearchBooksUseCase
 )
