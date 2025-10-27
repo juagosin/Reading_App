@@ -26,12 +26,16 @@ Su objetivo es ofrecer una experiencia moderna y minimalista para organizar tus 
 - 📚 **Pantalla de listado de libros**  
   Consulta todos los libros categorizados por estado (*leído*, *leyendo*, *pendiente*).
 
+- 🔍 **Búsqueda de libros con Open Library API**
+  Encuentra libros por título, autor o ISBN y añádelos directamente a tu biblioteca.
+
 - 🧠 **Arquitectura moderna (MVVM)**  
   Basada en buenas prácticas de Android para garantizar escalabilidad y mantenibilidad.
 
 - 💉 **Inyección de dependencias con Dagger Hilt**
 
 - 🗄️ **Persistencia local con Room Database**
+- 🌐 **Integración con API REST (Retrofit)**
 
 - 🎨 **Interfaz construida en Jetpack Compose (Material 3)**
 
@@ -45,6 +49,8 @@ Su objetivo es ofrecer una experiencia moderna y minimalista para organizar tus 
 | **UI Toolkit** | [Jetpack Compose](https://developer.android.com/jetpack/compose) |
 | **Arquitectura** | MVVM |
 | **DI Framework** | [Dagger Hilt](https://dagger.dev/hilt/) |
+| **Networking** | [Retrofit](https://square.github.io/retrofit/) + [OkHttp](https://square.github.io/okhttp/) |
+| **Carga de imágenes** | [Coil](https://coil-kt.github.io/coil/) |
 | **Base de datos local** | [Room](https://developer.android.com/training/data-storage/room) |
 | **Navegación** | [Navigation Compose](https://developer.android.com/jetpack/compose/navigation) |
 | **Asincronía** | Coroutines + Flow |
@@ -55,20 +61,18 @@ Su objetivo es ofrecer una experiencia moderna y minimalista para organizar tus 
 ## 📱 Capturas de pantalla
 
 
-| Pantalla principal | Listado de libros | Nuevo libro |
-|--------------------|-------------------|-------------------|
-| ![Home Screenshot](screenshots/Home.png) | ![List Screenshot](screenshots/Home2.png) | ![New Screenshot](screenshots/NewBook.png) |
+| Pantalla principal | Listado de libros | Nuevo libro | Buscar libro |
+|--------------------|-------------------|-------------------|-------------------|
+| ![Home Screenshot](screenshots/Home.png) | ![List Screenshot](screenshots/Home2.png) | ![New Screenshot](screenshots/NewBook.png) | ![Search Screenshot](screenshots/SearchScreen.png) |
 
 ---
 
 ## 🧪 Estado del proyecto
 
-🟢 **Versión actual:** `v2.0.0`  
+🟢 **Versión actual:** `v3.0.0`  
 🔧 Proyecto en desarrollo activo.  
-Se planifican futuras actualizaciones para:s
+Se planifican futuras actualizaciones para:
 - Refinamiento visual.
-- Integracion con API para búsqueda de libros.
-
 ---
 
 ## 📝 Licencia
