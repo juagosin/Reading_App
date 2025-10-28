@@ -39,6 +39,7 @@
     <string name="txt_book">Book</string>
     <string name="txt_searchingbooks">Searching books...</string>
     <string name="txt_books">Books</string>
+    <string name="txt_lastbooks">Last books</string>
     <string name="txt_booksFinished">Finished</string>
 
     <string name="txt_title_empty_library">Start your library!</string>

@@ -12,6 +12,8 @@ interface BookDao {
 
     @Query("SELECT * FROM book ORDER BY dateAd DESC")
     fun getBooksOrderByDateAd(): Flow<List<BookEntity>>
+    @Query("SELECT * FROM book ORDER BY dateAd DESC LIMIT 10")
+    fun getLastsBooksOrderByDateAd(): Flow<List<BookEntity>>
 
     @Query("SELECT * FROM book WHERE status = 1 ORDER BY dateAd")
     fun getFollowBooksOrderByDateAs(): Flow<List<BookEntity>>

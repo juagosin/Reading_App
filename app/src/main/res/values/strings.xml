@@ -40,6 +40,7 @@
     <string name="txt_book">Libro</string>
     <string name="txt_searchingbooks">Buscando libros...</string>
     <string name="txt_books">Libros</string>
+    <string name="txt_lastbooks">Últimos libros</string>
     <string name="txt_booksFinished">Leídos</string>
 
     <string name="txt_title_empty_library">¡Empieza tu biblioteca!</string>

@@ -15,6 +15,7 @@ import com.juagosin.readingAPP.domain.use_case.GetBookUseCase
 import com.juagosin.readingAPP.domain.use_case.GetBooksFollowingUseCase
 import com.juagosin.readingAPP.domain.use_case.GetBooksUseCase
 import com.juagosin.readingAPP.domain.use_case.GetLastBookReadUseCase
+import com.juagosin.readingAPP.domain.use_case.GetLastBooksUseCase
 import com.juagosin.readingAPP.domain.use_case.GetPercentBooksFinished
 import com.juagosin.readingAPP.domain.use_case.SearchBooksUseCase
 import dagger.Module
@@ -82,6 +83,7 @@ object AppModule {
     fun provideBookUseCases(repository: BookRepository): BooksUseCase {
         return BooksUseCase(
             getBooksUseCase = GetBooksUseCase(repository),
+            getLastBooksUseCase = GetLastBooksUseCase(repository),
             getBooksFollowingUseCase = GetBooksFollowingUseCase(repository),
             deleteBookUseCase = DeleteBookUseCase(repository),
             addBookUseCase = AddBookUseCase(repository),

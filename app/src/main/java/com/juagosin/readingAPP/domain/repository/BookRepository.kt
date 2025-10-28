@@ -7,6 +7,7 @@ import kotlinx.coroutines.flow.Flow
 interface BookRepository {
 
     fun getBooksOrderByDateAd(): Flow<List<Book>>
+    fun getLastsBooksOrderByDateAd(): Flow<List<Book>>
     fun getFollowBooksOrderByDateAs(): Flow<List<Book>>
     suspend fun getBookById(id: Int): Book?
     suspend fun getBookReading(): Book?
