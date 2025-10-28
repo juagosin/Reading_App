@@ -20,6 +20,10 @@ class BookRepositoryImpl(
         return bookDao.getBooksOrderByDateAd().map { it.toDomain() }
     }
 
+    override fun getLastsBooksOrderByDateAd(): Flow<List<Book>> {
+        return bookDao.getLastsBooksOrderByDateAd().map { it.toDomain() }
+    }
+
     override fun getFollowBooksOrderByDateAs(): Flow<List<Book>> {
         return bookDao.getFollowBooksOrderByDateAs().map { it.toDomain() }
     }

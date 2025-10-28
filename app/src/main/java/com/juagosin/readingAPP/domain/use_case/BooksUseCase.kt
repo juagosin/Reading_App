@@ -2,6 +2,7 @@ package com.juagosin.readingAPP.domain.use_case
 
 data class BooksUseCase(
     val getBooksUseCase: GetBooksUseCase,
+    val getLastBooksUseCase: GetLastBooksUseCase,
     val getBookReadingUseCase: GetBookReadingUseCase,
     val getBooksFollowingUseCase: GetBooksFollowingUseCase,
     val deleteBookUseCase: DeleteBookUseCase,

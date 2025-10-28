@@ -34,7 +34,7 @@ import kotlin.collections.forEach
 @Composable
 fun MyBooksSection(books: List<Book>, onItemClick: (bookId: Int) -> Unit) {
     Column {
-        Text(stringResource(R.string.screen_title_list), fontWeight = FontWeight.Bold, fontSize = 18.sp)
+        Text(stringResource(R.string.txt_lastbooks), fontWeight = FontWeight.Bold, fontSize = 18.sp)
         Spacer(modifier = Modifier.height(8.dp))
         books.forEach { book ->
             BookListItem(book, onItemClick)

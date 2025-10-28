@@ -50,7 +50,7 @@ class HomeViewModel @Inject constructor(
         _state.update { it.copy(isLoadingBooks = true, errorLoadingBooks = null) }
         try {
             Log.d("loadBooks", "try")
-            booksUseCase.getBooksUseCase()
+            booksUseCase.getLastBooksUseCase()
                 .onEach { books ->
                     Log.d("HomeViewModel", "Books loaded: ${books.size}")
                     _state.update { currentState ->
